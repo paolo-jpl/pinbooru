@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, Roboto;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --text-hover: #747aec;
+
+  --rounded-corner-xs: 0.3rem;
+  --rounded-corner-sm: 0.5rem;
+  --rounded-corner-md: 0.8rem;
+
+  --shadow: 0.2rem 0.25rem 0.3rem rgba(0, 0, 0, 0.418);
+
+  font-size: calc(0.7rem + 0.25vw);
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  margin-bottom: -5px;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--text-hover);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 800px;
+  min-height: 100vh;
+  font-family: Roboto;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.25s ease-out, color 0.15s ease-out;
+  
+}
+button:hover {
+  background-color: #0000002c;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+/* reset */
+
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+Typographic tweaks!
+3. Add accessible line-height
+4. Improve text rendering
+*/
+body {
+  line-height: 1.5; /* remove this next time, at least for buttons */
+  -webkit-font-smoothing: antialiased;
+}
+/*
+5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+font: inherit;  
+}
+/*
+7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;  
+}
