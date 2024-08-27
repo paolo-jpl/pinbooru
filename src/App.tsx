@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<ImgCollection user='user1'/>}/> 
         <Route path="/login" element={<Login/>}/>
         <Route path="/post/:id" element={<ImgPage/>}/>
-        <Route path="/user" element={<PrivateRoute><ImgCollection user='user1'/></PrivateRoute>}/>
+        <Route path="/:user/collection" element={<PrivateRoute><ImgCollection user='user2'/></PrivateRoute>}/>
       </Routes>
     </div>
   )
