@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const links = [
   { name: 'Explore', href: '/' },
@@ -15,11 +15,18 @@ export default function Navbar(){
     <nav className="navbar">
       <div>
         <NavLink to={`/`}>
-          <button className="navbtn navlogo">PINBOORU</button>
+          <button className="navbtn navlogo">
+            <span className="material-icons">beenhere</span>
+            PINBOORU
+          </button>
         </NavLink>
         {links.map((link) => {
           return (
-            <NavLink to={link.href} key={link.name}>
+            <NavLink to={link.href} key={link.name} 
+              className={({ isActive }) => 
+                isActive ? "navbtn active" : "navbtn"
+              }
+            >
               <button className="navbtn">{link.name}</button>
             </NavLink>
           )
@@ -29,7 +36,7 @@ export default function Navbar(){
         { user ?
           <NavLink to={`${user}/collection`} style={{display: "flex"}}>
             <button className="navbtn">
-              <span className="material-icons">login</span>
+              <span className="material-icons">collections_bookmark</span>
               My Collection
             </button>
           </NavLink>

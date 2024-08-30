@@ -18,6 +18,7 @@
   padding: 1rem 1.8rem;
   display: flex;
   justify-content: space-between;
+  transition: all 0.25s ease-out;
 }
 
   .navbar > div{
@@ -26,7 +27,7 @@
   }
 
   .navbtn{
-    background-color: var(--black-primary);
+    background-color: transparent;
     color: white;
     display: flex;
     align-items: center;
@@ -34,7 +35,18 @@
   }
 
     .navbtn:hover{
-      color: gray;
+      color: var(--text-hover);
+    }
+
+    .navbtn.active{
+      background-color: var(--teal-accent);
+      box-shadow: 0px -20px 0px 0px var(--teal-accent);
+      min-width: 5rem;
+      justify-content: center;
+    }
+
+    .navbtn.navlogo:hover{
+      color: white;
     }
 
 .sidebar{
