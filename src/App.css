@@ -19,6 +19,8 @@
   display: flex;
   justify-content: space-between;
   transition: all 0.25s ease-out;
+  box-shadow: var(--shadow);
+  position: relative;
 }
 
   .navbar > div{
@@ -68,7 +70,9 @@
   }
 
   .sidebar-list{
-
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .tag-category{

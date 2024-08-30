@@ -18,33 +18,31 @@ export default function Sidebar(){
 
 function defaultTags(){
   return(
-    <>
-      <ul className="sidebar-list">
-        <div className="sidebar-header">Tags</div>
-        <li>one</li>
-        <li>one</li>
-        <li>one</li>
-      </ul>
-    </>
+    <ul className="sidebar-list">
+      <div className="sidebar-header">Trending Tags</div>
+      <li>one</li>
+      <li>one</li>
+      <li>one</li>
+    </ul>
   )
 }
 
 function imageTags(){
   return(
-    <>
-      <ul className="sidebar-list">
-        <div className="tag-category">Artist</div>
+    <ul className="sidebar-list">
+      <div>
+        <span className="tag-category">Artist</span>
         <li>one</li>
         <li>one</li>
         <li>one</li>
-      </ul>
+      </div>
 
-      <ul className="sidebar-list">
-        <div className="sidebar-header">Information</div>
-        <li>Uploader:</li>
-        <li>Date: </li>
-        <li>Source: </li>
-      </ul>
-    </>
+      <div>
+        <span className="tag-category">Content</span>
+        <li>two</li>
+        <li>three</li>
+        <li>one</li>
+      </div>
+    </ul>
   )
 }
