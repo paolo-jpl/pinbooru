@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const imagePH = {
   uploader: "Aizken12",
@@ -21,12 +22,14 @@ export default function ImgPage(){
             <p>
               <a href={imagePH.url} target="_blank">View Original</a>
             </p>
-            <br></br>
             <p>{imagePH.desc}</p>
-            <br></br>
             <p>Source: {imagePH.source}</p>
-            <p>Uploader: {imagePH.uploader}</p> 
-            <p>Uploaded {date.toDateString()} </p>
+            <p className="subtext subtext-container">
+              Uploaded {date.toDateString()} by 
+              <Link to="/">
+                {imagePH.uploader}
+              </Link>
+            </p>
           </div>
           {/* Comments */}
         </div>
