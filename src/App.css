@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.img-profile{
+  max-height: 30px;
+  padding: 0 4px;
+}
+
 .content{
   display: grid;
   grid-template: auto 4fr / 1fr 5fr;
@@ -23,6 +28,9 @@
   .navbtn{
     background-color: var(--black-primary);
     color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
     .navbtn:hover{

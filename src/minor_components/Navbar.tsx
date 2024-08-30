@@ -3,7 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 
 const links = [
   { name: 'Explore', href: '/' },
-  { name: 'Tags', href: '/tags'}
+  { name: 'Tags', href: '/tags'},
+  { name: 'Artists', href: '/artists'}
 ];
 
 export default function Navbar(){
@@ -16,9 +17,6 @@ export default function Navbar(){
         <NavLink to={`/`}>
           <button className="navbtn navlogo">PINBOORU</button>
         </NavLink>
-        <NavLink to={`${user}/collection`}>
-          <button className="navbtn">My Collection</button>
-        </NavLink>
         {links.map((link) => {
           return (
             <NavLink to={link.href} key={link.name}>
@@ -28,9 +26,18 @@ export default function Navbar(){
         })}
       </div>
       <div>
-        <NavLink to="/login">
-          <button className="navbtn">Log In</button>
-        </NavLink>
+        { user ?
+          <NavLink to={`${user}/collection`} style={{display: "flex"}}>
+            <button className="navbtn">
+              <span className="material-icons">login</span>
+              My Collection
+            </button>
+          </NavLink>
+          : 
+          <NavLink to="/login">
+            <button className="navbtn">Log In</button>
+          </NavLink>
+        }
       </div>
     </nav>
   )

@@ -31,7 +31,6 @@
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  margin-bottom: -5px;
 }
 
 a {
@@ -65,9 +64,6 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: background-color 0.25s ease-out, color 0.15s ease-out;
-}
-button:hover {
-  background-color: #0000002c;
 }
 button:focus,
 button:focus-visible {
