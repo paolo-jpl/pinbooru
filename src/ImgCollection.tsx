@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import ImagePreview from "./minor_components/ImagePreview";
+import { Link } from "react-router-dom";
 
 
-export default function ImgCollection({user}: {user: string}){
+export default function ImgCollection(){
   //TODO:sperate Explore and Personal Collection into different components
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [images, setImages] = useState([])
+  const [images, setImages] = useState<any[]>([])
 
   useEffect(() => {
     fetch('http://localhost:3000/image')
@@ -27,7 +28,11 @@ export default function ImgCollection({user}: {user: string}){
         :
         <div className="preview-container">
           {images.map((image) => {
-            return <ImagePreview image={image}/>
+            return (
+              <Link to={`/post/${image.id}`}>
+                <ImagePreview image={image}/>
+              </Link>
+            )
           })}
         </div>
       }
