@@ -15,7 +15,7 @@ export default function Navbar(){
     <nav className="navbar">
       <div>
         <NavLink to={`/`}>
-          <button className="navbtn navlogo">
+          <button className="navbtn navlogo" style={{paddingRight: "1.7rem"}}>
             <span className="material-icons">beenhere</span>
             PINBOORU
           </button>
@@ -24,7 +24,7 @@ export default function Navbar(){
           return (
             <NavLink to={link.href} key={link.name} 
               className={({ isActive }) => 
-                isActive ? "navbtn active" : "navbtn"
+                isActive ? "navbtn-active" : ""
               }
             >
               <button className="navbtn">{link.name}</button>
