@@ -110,7 +110,8 @@ button.default {
 
 main{
   padding: 2rem;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .image-container{

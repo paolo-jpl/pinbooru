@@ -20,9 +20,11 @@ function defaultTags(){
   return(
     <ul className="sidebar-list">
       <div className="sidebar-header">Trending Tags</div>
-      <li>one</li>
-      <li>one</li>
-      <li>one</li>
+      <div>
+        <li>one</li>
+        <li>one</li>
+        <li>one</li>
+      </div>
     </ul>
   )
 }
