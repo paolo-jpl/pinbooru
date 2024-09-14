@@ -1,5 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { formatDate } from "./util/util";
+
+import Sidebar from './minor_components/Sidebar';
 
 export default function ImgPage(){
   const { id } = useParams();
@@ -17,7 +20,9 @@ export default function ImgPage(){
   }, []);
 
   return(
-    <main>
+    <>
+      <Sidebar/>
+      <main>
       { error?
         <p>Network Error</p>
         :
@@ -51,11 +56,6 @@ export default function ImgPage(){
         // TODO: Similar Images
       }
     </main>
+    </>
   )
-}
-
-function formatDate(timestamp: string){
-  let date = new Date(timestamp);
-  let formattedDate = `${(date.getMonth() + 1)}/${date.getDate()}/${date.getFullYear()}`;
-  return formattedDate;
 }

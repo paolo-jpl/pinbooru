@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import ImagePreview from "./minor_components/ImagePreview";
 import { Link } from "react-router-dom";
-
+import Sidebar from './minor_components/Sidebar';
+import ImagePreview from "./minor_components/ImagePreview";
 
 export default function ImgCollection(){
   //TODO:sperate Explore and Personal Collection into different components
@@ -19,23 +19,26 @@ export default function ImgCollection(){
   }, []);
 
   return(
-    <main >
-      { error?
-        <p>Network Error</p>
-        :
-        loading ?
-        <p>Loading...</p> //TODO: loading skeletons
-        :
-        <div className="preview-container">
-          {images.map((image) => {
-            return (
-              <Link to={`/post/${image.id}`}>
-                <ImagePreview image={image}/>
-              </Link>
-            )
-          })}
-        </div>
-      }
-    </main>
+    <>
+      <Sidebar/>
+      <main >
+        { error?
+          <p>Network Error</p>
+          :
+          loading ?
+          <p>Loading...</p> //TODO: loading skeletons
+          :
+          <div className="preview-container">
+            {images.map((image) => {
+              return (
+                <Link key={image.id} to={`/post/${image.id}`}>
+                  <ImagePreview image={image}/>
+                </Link>
+              )
+            })}
+          </div>
+        }
+      </main>
+    </>
   )
 }
