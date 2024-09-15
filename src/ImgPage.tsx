@@ -10,18 +10,24 @@ export default function ImgPage(){
   const [loading, setLoading] = useState(true);
   
   const [image, setImage] = useState<any>([]);
+  const [tags, setTags] = useState<any>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/image/${id}`) //TODO: joined table query with user rather than query image and then user
+    fetch(`http://localhost:3000/image/${id}`)
       .then(res => { return res.json() })
       .then(item => { setImage(item[0])})
       .catch((err: any) => setError(err))
       .finally(() => setLoading(false))
+    
+    fetch(`http://localhost:3000/image/${id}/tags`)
+      .then(res => { return res.json() })
+      .then(tags => { setTags(tags) })
+      .catch((err: any) => setError(err))
   }, []);
 
   return(
     <>
-      <Sidebar/>
+      <Sidebar tags={tags} loading={loading}/>
       <main>
       { error?
         <p>Network Error</p>
@@ -41,12 +47,11 @@ export default function ImgPage(){
                 <a href={image.imgURL} target="_blank">View Original</a>
               </p>
               <p>{image.description}</p> 
-              <p>Source: {image.source}</p>
+              <p>Source: <a href={image.source} target="_blank">{image.source}</a></p>
               <p className="subtext subtext-container">
                 Uploaded {formatDate(image.uploadedAt)} by 
-                <Link to="/" style={{marginLeft: "4px"}}>
-                  000
-                  {/* {image.uploader} */} 
+                <Link to={"/" + image.uploaderId} style={{marginLeft: "4px"}}>
+                  {image.uploader} 
                 </Link>
               </p>
             </div>
