@@ -1,5 +1,6 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { groupBy } from "lodash";
+import SidebarLink from "./SidebarLink";
 
 export default function Sidebar({tags, loading = true}: any){
   const location = useLocation();
@@ -25,7 +26,7 @@ function renderTags(tags: any, location: any){
 }
 
 function defaultTags(tags: any){
-  const arrangedTags = groupBy(tags, 'category'); 
+  const arrangedTags = groupBy(tags, 'category'); //TODO: order tabs by trending/ recently updated
 
   return(
     <ul className="sidebar-list">
@@ -33,7 +34,7 @@ function defaultTags(tags: any){
       <div>
         {tags.map((tag: any) => {
           return (
-            <li key={tag.name}>{tag.name}</li>
+            <SidebarLink key={tag.name} path={'/posts'} name={tag.name}/>
           )
         })}
       </div>
@@ -50,7 +51,7 @@ function imageTags(tags: any){
         <div>
           <span className="tag-category">Artist</span>
           {artist.map((tag: any) => {
-            return (<li key={tag.name}>{tag.name}</li>)
+            return (<SidebarLink key={tag.name} path={'/posts'} name={tag.name}/>)
           })}
         </div>
         : <></>
@@ -60,7 +61,7 @@ function imageTags(tags: any){
         <div>
           <span className="tag-category">Content</span>
           {content.map((tag: any) => {
-            return (<li key={tag.name}>{tag.name}</li>)
+            return (<SidebarLink key={tag.name} path={'/posts'} name={tag.name}/>)
           })}
         </div>
         : <></>
@@ -70,7 +71,7 @@ function imageTags(tags: any){
         <div>
           <span className="tag-category">Meta</span>
           {meta.map((tag: any) => {
-            return (<li key={tag.name}>{tag.name}</li>)
+            return (<SidebarLink key={tag.name} path={'/posts'} name={tag.name}/>)
           })}
         </div>
         : <></>
