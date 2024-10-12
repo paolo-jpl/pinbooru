@@ -19,7 +19,7 @@ export default function ImgPage(){
       .catch((err: any) => setError(err))
       .finally(() => setLoading(false))
     
-    fetch(`http://localhost:3000/image/${id}/tags`)
+    fetch(`http://localhost:3000/tags/image/${id}/`)
       .then(res => { return res.json() })
       .then(tags => { setTags(tags) })
       .catch((err: any) => setError(err))
